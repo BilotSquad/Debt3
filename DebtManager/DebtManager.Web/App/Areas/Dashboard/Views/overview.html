@@ -1,0 +1,44 @@
+﻿<table>
+    <tbody>
+        <tr>
+            <th colspan="2" align="left"><a href="#/Payments">Payments</a></th>
+            <th colspan="2" align="right"><a href="#/Debts">Debts</a></th>
+        </tr>
+        <tr>
+            <th colspan="4"><h3>Dashboard</h3></th>
+        </tr>
+        <tr>
+            <th>Must pay</th>
+            <th>Amount</th>
+            <th>Must receive</th>
+        </tr>
+        <tr ng-repeat="ad in aggregatedMinimizedDebts">
+            <td class="payer">{{ad.Payer.Name}}</td>
+            <td class="amount">{{ad.Amount}}</td>
+            <td class="receiver">{{ad.Receiver.Name}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<br />
+
+<input type="button" value="Verify initial grid" ng-click="displayInitialGrid = true;" />
+
+<table ng-show="displayInitialGrid">
+    <tbody>
+
+        <tr>
+            <th colspan="4"><h3>Dashboard</h3></th>
+        </tr>
+        <tr>
+            <th>Must pay</th>
+            <th>Amount</th>
+            <th>Must receive</th>
+        </tr>
+        <tr ng-repeat="ad in aggregatedDebts">
+            <td class="payer">{{ad.Payer.Name}}</td>
+            <td class="amount">{{ad.Amount}}</td>
+            <td class="receiver">{{ad.Receiver.Name}}</td>
+        </tr>
+    </tbody>
+</table>
