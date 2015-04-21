@@ -10,5 +10,6 @@ namespace DebtManager.Domain.Dtos
         public int Amount { get; set; }
         public DateTime Date { get; set; }
         public string Reason { get; set; }
+        public string ForamtedDate { get; set; }
     }
 }
