@@ -16,14 +16,16 @@ namespace DebtManager.Domain.Entities
 
         public DebtDto ToDto()
         {
-            DebtDto dto = new DebtDto();
-
-            dto.Id = this.Id;
-            dto.Payer = this.Payer != null ? this.Payer.ToDto() : null;
-            dto.Receiver = this.Receiver != null ? this.Receiver.ToDto() : null;
-            dto.Amount = this.Amount;
-            dto.Date = this.Date;
-            dto.Reason = this.Reason;
+            var dto = new DebtDto
+            {
+                Id = this.Id,
+                Payer = this.Payer != null ? this.Payer.ToDto() : null,
+                Receiver = this.Receiver != null ? this.Receiver.ToDto() : null,
+                Amount = this.Amount,
+                Date = this.Date,
+                Reason = this.Reason,
+                ForamtedDate = this.Date.ToString("f")
+            };
 
             return dto;
         }
